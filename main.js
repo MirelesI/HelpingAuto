@@ -61,18 +61,19 @@ app.on('activate', function () {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
 
-ipc.on('print-to-pdf', function(event) {
-  console.log(os.tmpdir());
-  const pdfPath = path.join(os.tmpdir(), 'print.pdf');
-  const win = BrowserWindow.fromWebContents(event.sender);
-  console.log(win.webContents);
-  win.webContents.print({ silent: false, printBackground: false, deviceName: '' }, function(error, data) {
-    if (error) return console.log(error.message);
+//ipc.on('print-to-pdf', function(event) {
+  //const win = BrowserWindow.fromWebContents(event.sender);
+  //console.log(os.tmpdir());
+  //const pdfPath = path.join(os.tmpdir(), 'print.pdf');
+  //const win = BrowserWindow.fromWebContents(event.sender);
+  //console.log(win.webContents.print);
+ // win.webContents.print({ silent: false, printBackground: false, deviceName: '' }, function(error, data) {
+   // if (error) return console.log(error.message);
 
-    fs.writeFile(pdfPath, data, function(err) {
-      if (err) return console.log(err.message);
-      shell.openExternal('file://' + pdfPath);
-      event.sender.send('wrote-pdf', pdfPath);
-    })
-  })
-});
+    //fs.writeFile(pdfPath, data, function(err) {
+     // if (err) return console.log(err.message);
+     // shell.openExternal('file://' + pdfPath);
+     // event.sender.send('wrote-pdf', pdfPath);
+    //})
+  //})
+//});
