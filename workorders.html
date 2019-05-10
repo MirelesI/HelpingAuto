@@ -5,21 +5,18 @@
     <title>Mireles Auto Repair</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="./workorders.js"></script>
   </head>
   <body>
     <h1>Mireles Auto Repair</h1>
     <!-- All of the Node.js APIs are available in this renderer process. -->
-    <div class="topnav">
-      <a class="active" href="#home">Home</a>
-      <a href="workorders.html">Work Orders</a>
-      <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
-    </div>
-    <h1> Thank you for using Mireles Services</h1>
-    <p> Any questions or problems please go to the contact page and contact me about the issue!</p>
-
-    <div id = "print-content">
-    <label id = 'pdf-path'></label>
+      <div class="topnav">
+        <a href="index.html" href="#home">Home</a>
+        <a class = "active">Work Orders</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </div>
+      <div id = "print-content">
         <form>
           Full Name:<br>
           <input type="text" name="Name"><br>
@@ -79,7 +76,7 @@
           <input type="text" name="Name"><br>
           Total Accessors:<br>
           <input type="text" name="Name"><br>
-          <button id = 'print-pdf'> Print </button>>
+          <input type="button" onclick="printDiv('print-content')"/>
         </form>
       </div>
     <script>
